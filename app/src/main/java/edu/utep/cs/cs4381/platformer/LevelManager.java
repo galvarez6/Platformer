@@ -84,6 +84,17 @@ public class LevelManager {
     }//end of loadMapData method
 
 
+    public boolean isPlaying() {
+        return playing;
+    }
+
+    public void switchPlayingStatus() {
+        if (playing) {
+            playing = false;
+        } else {
+            playing = true;
+        }
+    }
 }//end of LevelManger class
 
 

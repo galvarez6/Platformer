@@ -10,6 +10,7 @@ public class Grass extends GameObject {
         setType(type);
         setBitmapName("turf");
         setWorldLocation(worldStartX, worldStartY, 0);
+        setRectHitbox();
     }
 
     public void update(long fps, float gravity) {}
