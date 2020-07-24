@@ -57,6 +57,7 @@ public class Player extends GameObject {
     }
 
     public void update(long fps, float gravity) {
+        move(fps);
         if (isPressingRight) {
             this.setxVelocity(MAX_X_VELOCITY);
         } else if (isPressingLeft) {
@@ -171,4 +172,5 @@ public class Player extends GameObject {
             }
         }
     }
+
 }

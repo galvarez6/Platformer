@@ -19,8 +19,11 @@ public abstract class GameObject {
 
     private float xVelocity;
     private float yVelocity;
-    final int LEFT = -1;
-    final int RIGHT = 1;
+    ///constants used in other classes change to public
+    //these belong to game object
+    public static int LEFT = -1;
+    public static int RIGHT = 1;
+    //////////////////////////////////////////////////
     private int facing;
     private boolean moves = false;
 
@@ -114,6 +117,9 @@ public abstract class GameObject {
         }
     }
 
+
+    ////////////// getters and setters ///////////////////
+
     public int getFacing() {
         return facing;
     }
@@ -175,8 +181,7 @@ public abstract class GameObject {
         return animated;
     }
 
-    public void setAnimated(Context context, int pixelsPerMetre,
-                            boolean animated){
+    public void setAnimated(Context context, int pixelsPerMetre, boolean animated){
         this.animated = animated;
         this.anim = new Animation(context, bitmapName,
                 height,
@@ -192,4 +197,5 @@ public abstract class GameObject {
                 xVelocity,
                 isMoves());
     }
+
 }

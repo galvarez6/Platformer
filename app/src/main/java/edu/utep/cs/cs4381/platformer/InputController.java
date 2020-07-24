@@ -43,7 +43,7 @@ class InputController {
                 buttonPadding + buttonHeight);
     }
 
-    public List getButtons(){
+    public List<Rect> getButtons(){
         //create an array of buttons for the draw method
         ArrayList<Rect> currentButtonList = new ArrayList<>();  // FIXME
         currentButtonList.add(left);
@@ -64,13 +64,13 @@ class InputController {
                         MotionEvent.ACTION_MASK) {
                     case MotionEvent.ACTION_DOWN:
                         if (right.contains(x, y)) {
-                            l.player().setPressingRight(true);
-                            l.player().setPressingLeft(false);
+                            l.player.setPressingRight(true);
+                            l.player.setPressingLeft(false);
                         } else if (left.contains(x, y)) {
-                            l.player().setPressingLeft(true);
-                            l.player().setPressingRight(false);
+                            l.player.setPressingLeft(true);
+                            l.player.setPressingRight(false);
                         } else if (jump.contains(x, y)) {
-                            l.player().startJump(sound);
+                            l.player.startJump(sound);
                         } else if (shoot.contains(x, y)) {
                         } else if (pause.contains(x, y)) {
                             l.switchPlayingStatus();
@@ -78,20 +78,20 @@ class InputController {
                         break;
                     case MotionEvent.ACTION_UP:
                         if (right.contains(x, y)) {
-                            l.player().setPressingRight(false);
+                            l.player.setPressingRight(false);
                         } else if (left.contains(x, y)) {
-                            l.player().setPressingLeft(false);
+                            l.player.setPressingLeft(false);
                         }
                         break;
                     case MotionEvent.ACTION_POINTER_DOWN:
                         if (right.contains(x, y)) {
-                            l.player().setPressingRight(true);
-                            l.player().setPressingLeft(false);
+                            l.player.setPressingRight(true);
+                            l.player.setPressingLeft(false);
                         } else if (left.contains(x, y)) {
-                            l.player().setPressingLeft(true);
-                            l.player().setPressingRight(false);
+                            l.player.setPressingLeft(true);
+                            l.player.setPressingRight(false);
                         } else if (jump.contains(x, y)) {
-                            l.player().startJump(sound);
+                            l.player.startJump(sound);
                         } else if (shoot.contains(x, y)) {
                             //Handle shooting here
                         } else if (pause.contains(x, y)) {
@@ -100,10 +100,10 @@ class InputController {
                         break;
                     case MotionEvent.ACTION_POINTER_UP:
                         if (right.contains(x, y)) {
-                            l.player().setPressingRight(false);
+                            l.player.setPressingRight(false);
                             //Log.w("rightP:", "up" );
                         } else if (left.contains(x, y)) {
-                            l.player().setPressingLeft(false);
+                            l.player.setPressingLeft(false);
                             //Log.w("leftP:", "up" );
                         } else if (shoot.contains(x, y)) {
                             //Handle shooting here

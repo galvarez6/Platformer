@@ -12,10 +12,10 @@ public class LevelManager {
     private String level;
     private int mapWidth;
     private int mapHeight;
-    private Player player;
+    public Player player;
     public int playerIndex;
     private boolean playing;
-    private float gravity;
+    public float gravity;
     private LevelData levelData;
     public List<GameObject> gameObjects;
     private List<Rect> currentButtons;
@@ -31,7 +31,7 @@ public class LevelManager {
         gameObjects = new ArrayList<>();
         bitmapsArray = new Bitmap[25];
         loadMapData(context, pixelsPerMetre, px, py);
-        playing = true;
+        //playing = true;
     }//end of constructor
 
     public int getBitmapIndex(char blockType) {
@@ -89,10 +89,11 @@ public class LevelManager {
     }
 
     public void switchPlayingStatus() {
+        playing = !playing;
         if (playing) {
-            playing = false;
+            gravity = 6;
         } else {
-            playing = true;
+            gravity = 0;
         }
     }
 }//end of LevelManger class
